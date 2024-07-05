@@ -78,9 +78,9 @@ export default function ShoppingCart() {
                     ))}
                 </div>
                 <div ref={targetRef} className="col-span-4 pt-12 md:pt-0 md:col-span-1 p-4 md:bg-transparent">
-                    <Elements>
+                   {/*  <Elements>
                         <CheckoutForm currentUser={currentUser} />
-                    </Elements>
+                    </Elements> */}
                 </div>
             </div>
         </div>
