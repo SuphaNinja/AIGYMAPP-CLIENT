@@ -4,7 +4,7 @@ import axiosInstance from "../lib/axiosInstance"
 import CartItemCard from "../components/CartItemCard";
 import { Link } from "react-router-dom";
 import { Skeleton } from "src/components/ui/skeleton";
-import { Elements } from '@stripe/react-stripe-js';
+
 import CheckoutForm from "src/components/CheckoutForm";
 
 import { useRef, useState } from "react";
