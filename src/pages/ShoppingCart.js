@@ -6,12 +6,12 @@ import { Link } from "react-router-dom";
 import { Skeleton } from "src/components/ui/skeleton";
 import { Elements } from '@stripe/react-stripe-js';
 import CheckoutForm from "src/components/CheckoutForm";
-import { loadStripe } from "@stripe/stripe-js";
+
 import { useRef, useState } from "react";
 import { Button } from "src/components/ui/button";
 
 export default function ShoppingCart() {
-    const stripePromise = loadStripe('ENTER KEY HERE');
+    /* const stripePromise = loadStripe('ENTER KEY HERE'); */
 
     const targetRef = useRef(null);
     const [showScrollButton, setShowScrollButton] = useState(false);
@@ -78,7 +78,7 @@ export default function ShoppingCart() {
                     ))}
                 </div>
                 <div ref={targetRef} className="col-span-4 pt-12 md:pt-0 md:col-span-1 p-4 md:bg-transparent">
-                    <Elements stripe={stripePromise}>
+                    <Elements>
                         <CheckoutForm currentUser={currentUser} />
                     </Elements>
                 </div>

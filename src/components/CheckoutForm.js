@@ -1,5 +1,4 @@
 
-import { useStripe, useElements, CardElement } from '@stripe/react-stripe-js';
 import { useState } from 'react';
 import { Button } from './ui/button';
 import { Label } from './ui/label';
@@ -7,8 +6,6 @@ import { Input } from './ui/input';
 import { toast } from 'sonner';
 
 export default function CheckoutForm  ({ currentUser, totalPrice }) {
-    const stripe = useStripe();
-    const elements = useElements();
 
     const [ formData, setFormData ] = useState({
         name: currentUser.firstName + " " + currentUser.lastName,
@@ -35,7 +32,7 @@ export default function CheckoutForm  ({ currentUser, totalPrice }) {
         }));
     };
 
-    const handleSubmit = async (event) => {
+    /* const handleSubmit = async (event) => {
         event.preventDefault();
         if (!stripe || !elements) {
             return;
@@ -50,9 +47,9 @@ export default function CheckoutForm  ({ currentUser, totalPrice }) {
                 description: `Transaction details has been sent to ${paypalEmail}, thank you for your purchase!`
             });
         }
-    };
+    }; */
 
-    const CreditCardInput = () => {
+    /* const CreditCardInput = () => {
         return (
             <div className="mb-4">
                 <Label>Card Details</Label>
@@ -61,17 +58,17 @@ export default function CheckoutForm  ({ currentUser, totalPrice }) {
                 </div>
             </div>
         );
-    };
+    }; */
     
-    const PayPalInput = () => (
+    /* const PayPalInput = () => (
         <div className="mb-4">
             <Label>PayPal Email</Label>
             <Input type="email" value={paypalEmail} onChange={(e) => setPaypalEmail(e.target.value)}/>
         </div>
-    );
+    ); */
 
     return (
-        <form onSubmit={handleSubmit} className="p-4 rounded-md">
+        <form className="p-4 rounded-md">
             <h2 className="text-xl font-semibold mb-4">Billing Details</h2>
             <div className="mb-4">
                 <Label htmlFor="name">Name</Label>
@@ -109,8 +106,8 @@ export default function CheckoutForm  ({ currentUser, totalPrice }) {
                     <option value="paypal">PayPal</option>
                 </select>
             </div>
-            {paymentMethod === 'creditCard' && <CreditCardInput />}
-            {paymentMethod === 'paypal' && <PayPalInput />}
+            {/* {paymentMethod === 'creditCard' && <CreditCardInput />}
+            {paymentMethod === 'paypal' && <PayPalInput />} */}
             <p>Total: {calculateGrandTotal(currentUser.cart.cartItems)}$</p>
             <Button type="submit" className="mt-4 p-2 hover:bg-blue-600 bg-blue-500 text-white w-full rounded-md">
                 Pay Now 
