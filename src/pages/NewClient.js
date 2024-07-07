@@ -165,7 +165,6 @@ export default function NewClient() {
                             name="trainerId"
                             value={formData.trainerId}
                             onChange={handleChange}
-                            required
                             disabled={generateAiAnswer.isPending}
                         >
                             <option value="">Pick one</option>
