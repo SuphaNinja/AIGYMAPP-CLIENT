@@ -5,7 +5,6 @@ const axiosInstance = axios.create({
     headers: {
         'x-access-token': localStorage.getItem("token"),
     },
-    withCredentials: true, // This is important for sending cookies and other credentials
 });
 
 export default axiosInstance;
