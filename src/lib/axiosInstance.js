@@ -6,5 +6,4 @@ const axiosInstance = axios.create({
         'x-access-token': localStorage.getItem("token"),
     },
 });
-
 export default axiosInstance;
