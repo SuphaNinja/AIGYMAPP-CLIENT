@@ -1,5 +1,5 @@
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query"
-import axiosInstance from "@/lib/axiosInstance"
+import axiosInstance from "src/lib/axiosInstance"
 import { useState, useRef, useEffect } from "react"
 import { Link } from "react-router-dom"
 import { toast } from "sonner"
